@@ -395,3 +395,14 @@ input::placeholder{
     width:94%;
   }
 }
+/* ===== FORCE EVERYTHING VISIBLE (debug help) ===== */
+body, .page, main, header, footer, .container {
+  opacity: 1 !important;
+  visibility: visible !important;
+  display: block !important;
+}
+
+/* Make sure text is light against the purple background */
+body, .page, main, header, footer, .container, * {
+  color: #f9f7ff !important;
+}
