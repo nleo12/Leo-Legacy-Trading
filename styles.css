@@ -27,6 +27,7 @@
 html {
   scroll-behavior: smooth;
 }
+
 /* Make images and tables never overflow on small screens */
 img, table {
   max-width: 100%;
@@ -37,6 +38,11 @@ img, table {
 body {
   margin: 0;
   overflow-x: hidden;
+}
+
+pre {
+  white-space: pre-wrap;
+  word-wrap: break-word;
 }
 
 body {
