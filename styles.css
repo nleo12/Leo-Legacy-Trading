@@ -1,0 +1,390 @@
+
+/* =========================================================
+   Leo Legacy Trading - Unified Stylesheet
+   Theme: Royal Purple & Gold
+   Responsive Layout, Tabs Nav, Cards & Quiz
+========================================================= */
+
+:root{
+  --bg:#1b0437;
+  --panel:#2b074f;
+  --panel-soft:#35105e;
+  --accent:#4d1b90;
+  --line:#7042c7;
+  --text:#f9f7ff;
+  --muted:#c8bfd9;
+  --gold:#ffd700;
+  --gold-soft:#f8e37e;
+  --ink:#111;
+}
+
+*,
+*::before,
+*::after{
+  box-sizing:border-box;
+}
+
+html{
+  scroll-behavior:smooth;
+}
+
+body{
+  margin:0;
+  font-family:system-ui,"Segoe UI",Roboto,Arial,sans-serif;
+  background:radial-gradient(circle at top,#2E0854,#120323);
+  color:var(--text);
+  line-height:1.6;
+}
+
+/* Layout helpers */
+.page{
+  min-height:100vh;
+  display:flex;
+  flex-direction:column;
+}
+
+.container{
+  width:min(1100px,92%);
+  margin:0 auto;
+  padding:1.25rem 0;
+}
+
+.site-main{
+  flex:1;
+}
+
+h1,h2,h3{
+  margin:.4rem 0 .6rem;
+  font-weight:800;
+}
+
+p{
+  margin:.25rem 0 .9rem;
+}
+
+a{
+  color:var(--gold);
+  text-decoration:none;
+}
+
+a:hover{
+  text-decoration:underline;
+}
+
+/* ================= HEADER / NAV TABS ================= */
+
+.site-header{
+  position:sticky;
+  top:0;
+  z-index:50;
+  background:rgba(18,3,35,.93);
+  backdrop-filter:blur(14px);
+  border-bottom:1px solid var(--line);
+  box-shadow:0 5px 18px rgba(0,0,0,.6);
+}
+
+.navbar{
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  gap:1rem;
+  padding:.75rem 0;
+  flex-wrap:wrap;
+}
+
+.nav-brand{
+  display:flex;
+  flex-direction:column;
+  text-transform:uppercase;
+  letter-spacing:.09em;
+  font-weight:900;
+  color:var(--gold);
+}
+
+.brand-main{
+  font-size:1.1rem;
+}
+
+.brand-sub{
+  font-size:.78rem;
+  color:var(--muted);
+}
+
+.nav-menu{
+  position:relative;
+}
+
+.nav-links{
+  list-style:none;
+  display:flex;
+  gap:.4rem;
+  margin:0;
+  padding:0;
+}
+
+/* Tab-style links */
+.nav-links a{
+  display:inline-block;
+  padding:.45rem .9rem;
+  border-radius:999px;
+  border:1px solid rgba(255,255,255,.12);
+  color:var(--text);
+  font-size:.95rem;
+  background:linear-gradient(145deg,#2b074f,#1b0437);
+  box-shadow:0 4px 12px rgba(0,0,0,.4);
+  transition:.22s ease;
+}
+
+.nav-links a.active{
+  background:linear-gradient(145deg,var(--gold),var(--gold-soft));
+  color:var(--ink);
+  border-color:rgba(0,0,0,.3);
+}
+
+.nav-links a:hover{
+  transform:translateY(-2px);
+  box-shadow:0 8px 18px rgba(0,0,0,.7);
+}
+
+.nav-toggle{
+  display:none;
+  border:none;
+  background:none;
+  cursor:pointer;
+}
+
+.nav-toggle-bar{
+  width:24px;
+  height:3px;
+  border-radius:2px;
+  background:#fff;
+  margin:4px 0;
+}
+
+/* ================= HERO ================= */
+
+.hero{
+  padding:3.5rem 0 3rem;
+  background:radial-gradient(circle at top,#3b0b78,#140327);
+}
+
+.hero-grid{
+  display:grid;
+  gap:2.25rem;
+  grid-template-columns:minmax(0,1.5fr) minmax(0,1fr);
+  align-items:center;
+}
+
+.hero-text h1{
+  font-size:clamp(2.2rem,4.5vw,3.4rem);
+  color:var(--gold);
+  text-shadow:0 0 16px rgba(0,0,0,.9);
+}
+
+.hero-text p{
+  max-width:620px;
+}
+
+.hero-actions{
+  display:flex;
+  flex-wrap:wrap;
+  gap:.75rem;
+  margin:.9rem 0 1.1rem;
+}
+
+.hero-media .hero-chart{
+  background:var(--panel-soft);
+  padding:1rem;
+  border-radius:16px;
+  border:1px solid var(--line);
+  box-shadow:0 10px 32px rgba(0,0,0,.7);
+}
+
+.center{text-align:center;}
+.small{font-size:.9rem;color:var(--muted);}
+
+/* Buttons */
+.btn{
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  padding:.7rem 1.3rem;
+  border-radius:999px;
+  border:1px solid transparent;
+  font-weight:700;
+  cursor:pointer;
+  text-transform:uppercase;
+  letter-spacing:.04em;
+  font-size:.95rem;
+}
+
+.btn.primary{
+  background:linear-gradient(145deg,var(--gold),var(--gold-soft));
+  color:var(--ink);
+}
+
+.btn.ghost{
+  background:rgba(255,255,255,.1);
+  color:var(--text);
+  border-color:rgba(255,255,255,.2);
+}
+
+.btn:hover{
+  filter:brightness(1.05);
+  transform:translateY(-1px);
+  box-shadow:0 8px 20px rgba(0,0,0,.7);
+}
+
+/* ================= CARDS, GRID & TABLES ================= */
+
+.grid,
+.toc-grid{
+  display:grid;
+  gap:1.25rem;
+  grid-template-columns:repeat(auto-fit,minmax(240px,1fr));
+}
+
+.card{
+  background:var(--panel);
+  padding:1.1rem 1.3rem;
+  border-radius:16px;
+  border:1px solid var(--line);
+  box-shadow:0 10px 30px rgba(0,0,0,.6);
+}
+
+.responsive-table{
+  overflow-x:auto;
+  margin-top:.6rem;
+}
+
+table{
+  width:100%;
+  border-collapse:collapse;
+  background:var(--panel);
+}
+
+th,td{
+  padding:.6rem .7rem;
+  border:1px solid var(--line);
+  text-align:left;
+}
+
+th{
+  background:var(--accent);
+}
+
+/* ================= QUIZ ================= */
+
+.quiz-form{
+  background:var(--panel);
+  border-radius:16px;
+  border:1px solid var(--line);
+  padding:1.4rem 1.5rem;
+  display:grid;
+  gap:1.1rem;
+  max-width:800px;
+}
+
+.quiz-question{
+  border-bottom:1px dashed rgba(255,255,255,.15);
+  padding-bottom:.7rem;
+}
+
+.quiz-options{
+  display:grid;
+  gap:.3rem;
+}
+
+.quiz-actions{
+  margin-top:.7rem;
+  display:flex;
+  gap:.75rem;
+  flex-wrap:wrap;
+}
+
+input[type="text"],
+input[type="email"],
+textarea{
+  width:100%;
+  padding:.55rem .7rem;
+  border-radius:10px;
+  border:1px solid var(--line);
+  background:#1b0537;
+  color:var(--text);
+}
+
+input::placeholder{
+  color:rgba(255,255,255,.6);
+}
+
+/* ================= FOOTER ================= */
+
+.site-footer{
+  background:#0d021a;
+  border-top:1px solid var(--line);
+  padding:1.6rem 0;
+  margin-top:2rem;
+  color:var(--muted);
+}
+
+.footer-grid{
+  display:flex;
+  justify-content:space-between;
+  gap:1rem;
+  flex-wrap:wrap;
+}
+
+.footer-meta{
+  text-align:right;
+  font-size:.9rem;
+}
+
+.site-footer a{
+  color:var(--gold-soft);
+}
+
+/* ================= MEDIA QUERIES ================= */
+
+@media (max-width:900px){
+  .hero-grid{
+    grid-template-columns:1fr;
+  }
+}
+
+@media (max-width:768px){
+  .nav-toggle{
+    display:block;
+  }
+  .nav-links{
+    position:absolute;
+    top:100%;
+    right:0;
+    left:0;
+    flex-direction:column;
+    padding:.6rem 0 .4rem;
+    background:#120325;
+    border-bottom:1px solid var(--line);
+    max-height:0;
+    overflow:hidden;
+    transition:max-height .3s ease;
+  }
+  .nav-links.open{
+    max-height:320px;
+  }
+  .nav-links li{
+    text-align:center;
+  }
+  .footer-grid{
+    flex-direction:column;
+    text-align:center;
+  }
+}
+
+@media (max-width:480px){
+  body{
+    font-size:.98rem;
+  }
+  .container{
+    width:94%;
+  }
+}

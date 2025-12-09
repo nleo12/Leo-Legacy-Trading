@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Self-Assessment Quiz — Leo Legacy Trading</title>
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+<div class="page">
+  <header class="site-header">
+    <div class="container navbar">
+      <a href="index.html" class="nav-brand">
+        <span class="brand-main">LegacyTrades Academy</span>
+        <span class="brand-sub">Skill Check Quiz</span>
+      </a>
+      <button class="nav-toggle" aria-label="Toggle navigation">
+        <span class="nav-toggle-bar"></span>
+        <span class="nav-toggle-bar"></span>
+        <span class="nav-toggle-bar"></span>
+      </button>
+      <nav class="nav-menu">
+        <ul class="nav-links">
+          <li><a href="index.html">Home</a></li>
+          <li><a href="indicators.html">Technical Indicators</a></li>
+          <li><a href="risk-management.html">Risk Management</a></li>
+          <li><a href="concepts.html">Key Concepts</a></li>
+          <li><a href="references.html">References &amp; Resources</a></li>
+          <li><a href="about.html">About</a></li>
+          <li><a class="active" href="quiz.html">Quiz</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main class="site-main">
+    <section class="container">
+      <h1>LegacyTrades Skill Check</h1>
+      <p>
+        This quiz tests your understanding of indicators, risk management, and chart behavior covered on the site.
+        Aim for <strong>100%</strong> — keep trying until you get a perfect score.
+      </p>
+
+      <form id="quiz-form" class="quiz-form" novalidate>
+        <div class="quiz-question">
+          <h3>Q1 – Fill in the blank</h3>
+          <label for="q1">
+            The Relative Strength Index (RSI) is an indicator that measures market
+            <input id="q1" name="q1" type="text" placeholder="one word (e.g. momentum)">
+          </label>
+        </div>
+
+        <div class="quiz-question">
+          <h3>Q2 – Which moving average gives more weight to recent prices?</h3>
+          <div class="quiz-options">
+            <label><input type="radio" name="q2" value="A"> Simple Moving Average (SMA)</label>
+            <label><input type="radio" name="q2" value="B"> Exponential Moving Average (EMA)</label>
+            <label><input type="radio" name="q2" value="C"> Hull Moving Average (HMA)</label>
+            <label><input type="radio" name="q2" value="D"> Triangular Moving Average (TMA)</label>
+          </div>
+        </div>
+
+        <div class="quiz-question">
+          <h3>Q3 – Which candlestick is commonly seen as a bearish reversal at the top of an uptrend?</h3>
+          <div class="quiz-options">
+            <label><input type="radio" name="q3" value="A"> Hammer</label>
+            <label><input type="radio" name="q3" value="B"> Shooting Star</label>
+            <label><input type="radio" name="q3" value="C"> Doji</label>
+            <label><input type="radio" name="q3" value="D"> Bullish Engulfing</label>
+          </div>
+        </div>
+
+        <div class="quiz-question">
+          <h3>Q4 – A common conservative recommendation for risk per trade is about:</h3>
+          <div class="quiz-options">
+            <label><input type="radio" name="q4" value="A"> 5%</label>
+            <label><input type="radio" name="q4" value="B"> 1%</label>
+            <label><input type="radio" name="q4" value="C"> 10%</label>
+            <label><input type="radio" name="q4" value="D"> 0.01%</label>
+          </div>
+        </div>
+
+        <div class="quiz-question">
+          <h3>Q5 – Which of the following are key parts of risk management? (Select all that apply)</h3>
+          <div class="quiz-options">
+            <label><input type="checkbox" name="q5" value="position"> Position sizing</label>
+            <label><input type="checkbox" name="q5" value="stop"> Stop-loss placement</label>
+            <label><input type="checkbox" name="q5" value="overtrade"> Taking as many trades as possible</label>
+            <label><input type="checkbox" name="q5" value="journal"> Journaling &amp; reviewing trades</label>
+          </div>
+        </div>
+
+        <div class="quiz-actions">
+          <button id="submit-btn" type="button" class="btn primary">Submit Quiz</button>
+          <button id="reset-btn" type="button" class="btn ghost">Reset</button>
+        </div>
+      </form>
+
+      <section id="results" aria-live="polite" style="margin-top:1rem;"></section>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-grid">
+      <div>
+        <p>&copy; 2025 Nubia Leo — Quiz Module</p>
+      </div>
+      <div class="footer-meta">
+        <p>Future Quant Developer &amp; Trader</p>
+      </div>
+    </div>
+  </footer>
+</div>
+<script src="js/main.js"></script>
+</body>
+</html>
