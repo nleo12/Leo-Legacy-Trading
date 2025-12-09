@@ -1,4 +1,3 @@
-
 // main.js - navigation toggle + quiz grading
 
 document.addEventListener("DOMContentLoaded", function () {
