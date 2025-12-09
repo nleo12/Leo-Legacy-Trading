@@ -1,3 +1,27 @@
+/* ==========================================================
+   LegacyTrades Academy — JavaScript Logic
+   Nubia Leo
+   IT 3203 Web Development — Prof. Tucker
+   12/08/2025
+
+   Purpose:
+   This script handles quiz functionality, scoring logic,
+   answer validation, feedback display & DOM updates.
+
+   Functionality:
+   • Stores correct answers in constant key
+   • Auto-grades fill-in and multiple-choice questions
+   • Displays PASS or FAIL with score breakdown
+   • Reset button clears form and results section
+
+   Future Improvements:
+   • Add animations when results generate
+   • Add timed quiz or randomize questions
+   • Store quiz results using localStorage
+   • Add accessibility improvements for screen readers
+
+   File is externally linked in quiz.html.
+========================================================== */
 // main.js - nav + quiz logic for Leo Legacy Trading
 document.addEventListener("DOMContentLoaded", function () {
   // Mobile nav toggle
