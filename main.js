@@ -27,12 +27,14 @@ document.addEventListener("DOMContentLoaded", function () {
   if (!form || !submitBtn || !resetBtn || !resultsEl) return;
 
   const ANSWERS = {
-    q1: "momentum",
-    q2: "B",
-    q3: "B",
-    q4: "B",
-    q5: ["position", "stop", "journal"]
-  };
+  q1: "momentum",
+  q2: "B",
+  q3: "B",
+  q4: "B",
+  q5: ["position", "stop", "journal"],
+  q6: "C", // FOMO emotional trading
+  q7: "A"  // higher highs & higher lows = uptrend
+};
 
   function createBadge(text, bg) {
     const span = document.createElement("span");
@@ -49,7 +51,7 @@ document.addEventListener("DOMContentLoaded", function () {
   function gradeQuiz() {
     resultsEl.innerHTML = "";
     let score = 0;
-    const total = 5;
+    const total = 7;
 
     const q1Value = (document.getElementById("q1").value || "").trim().toLowerCase();
     const q1Correct = q1Value === ANSWERS.q1.toLowerCase();
@@ -85,6 +87,8 @@ document.addEventListener("DOMContentLoaded", function () {
     gradeRadio("q2", "Q2 – Moving average that weights recent prices more");
     gradeRadio("q3", "Q3 – Bearish reversal pattern at top of an uptrend");
     gradeRadio("q4", "Q4 – Conservative risk-per-trade %");
+    gradeRadio("q6", "Q6 – Example of emotional trading behavior");
+    gradeRadio("q7", "Q7 – Pattern that best describes an uptrend");
 
     const checked = Array.prototype.slice
       .call(document.querySelectorAll('input[name="q5"]:checked'))
