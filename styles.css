@@ -27,6 +27,17 @@
 html {
   scroll-behavior: smooth;
 }
+/* Make images and tables never overflow on small screens */
+img, table {
+  max-width: 100%;
+  height: auto;
+}
+
+/* Prevent horizontal scrolling on mobile */
+body {
+  margin: 0;
+  overflow-x: hidden;
+}
 
 body {
   margin: 0;
