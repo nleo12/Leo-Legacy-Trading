@@ -3,14 +3,13 @@
    Theme: Royal Purple & Gold
    Responsive Layout, Tabs Nav, Cards & Quiz
 ========================================================= */
-/* Smooth page fade-in */
+/* Smooth page base (no fade for now) */
 body {
-    opacity: 0;
-    transition: opacity .4s ease-in-out;
-}
-
-body.loaded {
-    opacity: 1;
+  margin:0;
+  font-family:system-ui,"Segoe UI",Roboto,Arial,sans-serif;
+  background:radial-gradient(circle at top,#2E0854,#120323);
+  color:var(--text);
+  line-height:1.6;
 }
 
 :root{
