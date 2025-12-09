@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Risk Management — Leo Legacy Trading</title>
+  <link rel="stylesheet" href="css/styles.css">
+  <script src="js/main.js" defer></script>
+</head>
+<body>
+<div class="page">
+  <header class="site-header">
+    <div class="container navbar">
+      <!-- Brand with crown-style logo -->
+      <a href="index.html" class="nav-brand">
+        <div class="brand-logo" aria-hidden="true">LL</div>
+        <div class="brand-text">
+          <span class="brand-main">LegacyTrades Academy</span>
+          <span class="brand-sub">Day Trading • Technical Analysis</span>
+        </div>
+      </a>
+      <button class="nav-toggle" aria-label="Toggle navigation">
+        <span class="nav-toggle-bar"></span>
+        <span class="nav-toggle-bar"></span>
+        <span class="nav-toggle-bar"></span>
+      </button>
+      <nav class="nav-menu">
+        <ul class="nav-links">
+          <li><a href="index.html">Home</a></li>
+          <li><a href="indicators.html">Technical Indicators</a></li>
+          <li><a href="risk-management.html" class="active">Risk Management</a></li>
+          <li><a href="concepts.html">Key Concepts</a></li>
+          <li><a href="references.html">References &amp; Resources</a></li>
+          <li><a href="about.html">About</a></li>
+          <li><a href="quiz.html">Quiz</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main class="site-main">
+    <section class="container">
+      <h1>Risk Management</h1>
+      <p>
+        Risk management is about staying in the game long enough to let your edge play out.
+        A trader who respects risk can survive long enough to learn and improve.
+      </p>
+      <article class="card">
+        <h2>Core Rules</h2>
+        <ul>
+          <li>Risk a small fixed percent per trade (for example 0.5–1% of the account).</li>
+          <li>Size positions so that a full stop-out equals your planned risk.</li>
+          <li>Set a daily loss limit to avoid emotional revenge trading.</li>
+        </ul>
+      </article>
+      <article class="card" style="margin-top:1.2rem;">
+        <h2>Risk–Reward &amp; Position Sizing Formula</h2>
+        <p>
+          Good trades aim for at least <strong>2R or 3R</strong> (2 or 3 times reward vs. risk).
+        </p>
+        <pre>
+Position Size = (Account × Risk%) ÷ (Stop Distance × Value Per Point)
+        </pre>
+        <p><em>Example:</em> Account $5,000, risk 1% = $50. If stop loss is 25 points and each point is $1,
+        then Position Size = 50 ÷ 25 = <strong>2 contracts</strong>.</p>
+        <img src="images/risk-chart-sample.png" alt="Risk reward example graphic">
+      </article>
+      <article class="card" style="margin-top:1.2rem;">
+        <h2>Expectancy &amp; Journaling</h2>
+        <p><strong>Expectancy = (Win% × Avg Win) − (Loss% × Avg Loss)</strong></p>
+        <p>
+          Tracking expectancy turns trading into a measurable process instead of guessing. Journaling helps
+          you see whether you follow your rules or fall into emotional decisions.
+        </p>
+        <ul>
+          <li>Why did you take the trade?</li>
+          <li>Was it with or against trend?</li>
+          <li>Did you follow your SL/TP rules?</li>
+          <li>Did emotions influence your exit?</li>
+        </ul>
+      </article>
+    </section>
+  </main>
+  <footer class="site-footer">
+    <div class="container footer-grid">
+      <div>
+        <p>&copy; 2025 Nubia Leo — Leo Legacy Trading (class project).</p>
+        <p>This website is for IT 3203 and is not financial advice.</p>
+      </div>
+      <div class="footer-meta">
+        <p>Future Quant Developer &amp; Trader</p>
+      </div>
+    </div>
+  </footer>
+
+</div>
+</body>
+</html>

@@ -1,16 +1,31 @@
-// main.js - navigation toggle + quiz grading
-
+// main.js - nav + quiz logic for Leo Legacy Trading
 document.addEventListener("DOMContentLoaded", function () {
   // Mobile nav toggle
   const navToggle = document.querySelector(".nav-toggle");
-  const navLinks = document.querySelector(".nav-links");
-  if (navToggle && navLinks) {
+  const navLinksList = document.querySelector(".nav-links");
+
+  if (navToggle && navLinksList) {
     navToggle.addEventListener("click", () => {
-      navLinks.classList.toggle("open");
+      navLinksList.classList.toggle("open");
+    });
+
+    navLinksList.querySelectorAll("a").forEach(link => {
+      link.addEventListener("click", () => {
+        if (navLinksList.classList.contains("open")) {
+          navLinksList.classList.remove("open");
+        }
+      });
     });
   }
 
-  // Quiz grading logic
+  // Quiz grading (only on quiz page)
+  const form = document.getElementById("quiz-form");
+  const submitBtn = document.getElementById("submit-btn");
+  const resetBtn = document.getElementById("reset-btn");
+  const resultsEl = document.getElementById("results");
+
+  if (!form || !submitBtn || !resetBtn || !resultsEl) return;
+
   const ANSWERS = {
     q1: "momentum",
     q2: "B",
@@ -18,15 +33,6 @@ document.addEventListener("DOMContentLoaded", function () {
     q4: "B",
     q5: ["position", "stop", "journal"]
   };
-
-  const form = document.getElementById("quiz-form");
-  const submitBtn = document.getElementById("submit-btn");
-  const resetBtn = document.getElementById("reset-btn");
-  const resultsEl = document.getElementById("results");
-
-  if (!form || !submitBtn || !resetBtn || !resultsEl) {
-    return; // quiz not on this page
-  }
 
   function createBadge(text, bg) {
     const span = document.createElement("span");
@@ -45,10 +51,10 @@ document.addEventListener("DOMContentLoaded", function () {
     let score = 0;
     const total = 5;
 
-    // Q1
     const q1Value = (document.getElementById("q1").value || "").trim().toLowerCase();
     const q1Correct = q1Value === ANSWERS.q1.toLowerCase();
     if (q1Correct) score++;
+
     const q1Div = document.createElement("div");
     q1Div.innerHTML = "<strong>Q1 – RSI purpose</strong>";
     q1Div.appendChild(createBadge(q1Correct ? "Correct" : "Incorrect", q1Correct ? "#7CE39A" : "#FF9B9B"));
@@ -56,38 +62,30 @@ document.addEventListener("DOMContentLoaded", function () {
     q1Div.innerHTML += `<div class="small">Correct: <strong>${ANSWERS.q1}</strong></div>`;
     resultsEl.appendChild(q1Div);
 
-    // Helper for radio questions
     function gradeRadio(name, label) {
       const nodes = document.getElementsByName(name);
       let selected = null;
-
-      // forEach may not exist in some NodeList implementations
-      if (nodes.forEach) {
-        nodes.forEach(r => { if (r.checked) selected = r.value; });
-      } else {
-        for (let i = 0; i < nodes.length; i++) {
-          if (nodes[i].checked) {
-            selected = nodes[i].value;
-            break;
-          }
+      for (let i = 0; i < nodes.length; i++) {
+        if (nodes[i].checked) {
+          selected = nodes[i].value;
+          break;
         }
       }
-
       const correct = selected === ANSWERS[name];
       if (correct) score++;
+
       const div = document.createElement("div");
-      div.innerHTML = `<strong>${label}</strong>`;
+      div.innerHTML = `<strong>{label}</strong>`.replace("{label}", label);
       div.appendChild(createBadge(correct ? "Correct" : "Incorrect", correct ? "#7CE39A" : "#FF9B9B"));
       div.innerHTML += `<div class="small">Your answer: ${selected || "<em>none</em>"}</div>`;
       div.innerHTML += `<div class="small">Correct choice: <strong>${ANSWERS[name]}</strong></div>`;
       resultsEl.appendChild(div);
     }
 
-    gradeRadio("q2", "Q2 – Moving average with more weight on recent prices");
-    gradeRadio("q3", "Q3 – Bearish reversal candle at top of an uptrend");
-    gradeRadio("q4", "Q4 – Conservative risk per trade");
+    gradeRadio("q2", "Q2 – Moving average that weights recent prices more");
+    gradeRadio("q3", "Q3 – Bearish reversal pattern at top of an uptrend");
+    gradeRadio("q4", "Q4 – Conservative risk-per-trade %");
 
-    // Q5 multi-select
     const checked = Array.prototype.slice
       .call(document.querySelectorAll('input[name="q5"]:checked'))
       .map(el => el.value)
@@ -95,6 +93,7 @@ document.addEventListener("DOMContentLoaded", function () {
     const correctQ5 = ANSWERS.q5.slice().sort();
     const q5Correct = JSON.stringify(checked) === JSON.stringify(correctQ5);
     if (q5Correct) score++;
+
     const q5Div = document.createElement("div");
     q5Div.innerHTML = "<strong>Q5 – Risk management components</strong>";
     q5Div.appendChild(createBadge(q5Correct ? "Correct" : "Incorrect", q5Correct ? "#7CE39A" : "#FF9B9B"));
@@ -112,7 +111,7 @@ document.addEventListener("DOMContentLoaded", function () {
     summary.appendChild(createBadge(percent === 100 ? "PASS" : "REVIEW MATERIAL", percent === 100 ? "#7CE39A" : "#FF9B9B"));
     resultsEl.appendChild(summary);
 
-    summary.scrollIntoView({ behavior:"smooth", block:"center" });
+    summary.scrollIntoView({ behavior: "smooth", block: "center" });
   }
 
   function resetQuiz() {

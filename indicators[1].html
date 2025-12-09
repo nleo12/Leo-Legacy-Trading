@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Technical Indicators — Leo Legacy Trading</title>
+  <link rel="stylesheet" href="css/styles.css">
+  <script src="js/main.js" defer></script>
+</head>
+<body>
+<div class="page">
+  <header class="site-header">
+    <div class="container navbar">
+      <!-- Brand with crown-style logo -->
+      <a href="index.html" class="nav-brand">
+        <div class="brand-logo" aria-hidden="true">LL</div>
+        <div class="brand-text">
+          <span class="brand-main">LegacyTrades Academy</span>
+          <span class="brand-sub">Day Trading • Technical Analysis</span>
+        </div>
+      </a>
+      <button class="nav-toggle" aria-label="Toggle navigation">
+        <span class="nav-toggle-bar"></span>
+        <span class="nav-toggle-bar"></span>
+        <span class="nav-toggle-bar"></span>
+      </button>
+      <nav class="nav-menu">
+        <ul class="nav-links">
+          <li><a href="index.html">Home</a></li>
+          <li><a href="indicators.html" class="active">Technical Indicators</a></li>
+          <li><a href="risk-management.html">Risk Management</a></li>
+          <li><a href="concepts.html">Key Concepts</a></li>
+          <li><a href="references.html">References &amp; Resources</a></li>
+          <li><a href="about.html">About</a></li>
+          <li><a href="quiz.html">Quiz</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main class="site-main">
+    <section class="container">
+      <h1>Technical Indicators</h1>
+      <p>
+        Technical indicators are math tools built from price or volume. I treat them as supporting evidence,
+        not as the only reason to enter or exit a trade.
+      </p>
+      <article class="card">
+        <h2>Common Indicators</h2>
+        <ul>
+          <li><strong>Moving Averages:</strong> Smooth price and show trend direction.</li>
+          <li><strong>RSI:</strong> Momentum oscillator that can show overbought/oversold and divergence.</li>
+          <li><strong>MACD:</strong> Combines EMAs to highlight momentum shifts.</li>
+          <li><strong>Bollinger Bands:</strong> Use volatility bands to spot expansion and potential breakouts.</li>
+        </ul>
+      </article>
+      <article class="card" style="margin-top:1.2rem;">
+        <h2>Quick Reference Table</h2>
+        <div class="responsive-table">
+          <table>
+            <thead>
+              <tr>
+                <th>Indicator</th>
+                <th>Primary Use</th>
+                <th>Typical Timeframes</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>50 / 200 MA</td>
+                <td>Trend filter &amp; dynamic support/resistance</td>
+                <td>4H, Daily</td>
+              </tr>
+              <tr>
+                <td>RSI (14)</td>
+                <td>Momentum &amp; divergence</td>
+                <td>15m, 1H, 4H</td>
+              </tr>
+              <tr>
+                <td>MACD</td>
+                <td>Momentum shifts &amp; trend strength</td>
+                <td>1H, 4H, Daily</td>
+              </tr>
+              <tr>
+                <td>OBV</td>
+                <td>Volume pressure confirmation</td>
+                <td>Any</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </article>
+      <article class="card" style="margin-top:1.2rem;">
+        <h2>Indicator Use in Real Trading</h2>
+        <p>
+          Indicators should act as confirmation rather than prediction. Professional traders
+          first analyze <strong>price structure</strong>, <strong>volume shifts</strong>, and <strong>trend direction</strong>, then use indicators to validate decisions.
+        </p>
+        <ul>
+          <li><strong>RSI</strong> helps identify exhaustion points and potential reversals.</li>
+          <li><strong>Moving Averages</strong> show trend and dynamic support or resistance.</li>
+          <li><strong>MACD</strong> reveals momentum changes and crossover signals.</li>
+          <li><strong>Bollinger Bands</strong> show volatility expansion and breakouts.</li>
+        </ul>
+        <p><em>Example entry:</em> In an uptrend, price pulls into the 50 EMA, RSI crosses back above 40,
+        and MACD turns positive — together they confirm a pullback buying opportunity.</p>
+        <img src="images/ma-rsi-example.png" alt="MA + RSI confluence example chart">
+        <p class="small">MA + RSI confluence can increase the probability of catching pullbacks safely.</p>
+      </article>
+    </section>
+  </main>
+  <footer class="site-footer">
+    <div class="container footer-grid">
+      <div>
+        <p>&copy; 2025 Nubia Leo — Leo Legacy Trading (class project).</p>
+        <p>This website is for IT 3203 and is not financial advice.</p>
+      </div>
+      <div class="footer-meta">
+        <p>Future Quant Developer &amp; Trader</p>
+      </div>
+    </div>
+  </footer>
+
+</div>
+</body>
+</html>
