@@ -122,3 +122,30 @@ document.addEventListener("DOMContentLoaded", function () {
   submitBtn.addEventListener("click", gradeQuiz);
   resetBtn.addEventListener("click", resetQuiz);
 });
+@media (max-width: 768px) {
+  .nav-toggle {
+    display: block;
+  }
+
+  .nav-links {
+    position: absolute;
+    top: 100%;
+    right: 0;
+    left: 0;
+    flex-direction: column;
+    padding: .6rem 0 .4rem;
+    border-radius: 0 0 14px 14px;
+    background: #120325;
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height .3s ease;
+  }
+
+  .nav-links.open {
+    max-height: 320px;
+  }
+
+  .nav-links li {
+    text-align: center;
+  }
+}
