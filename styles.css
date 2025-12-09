@@ -1,5 +1,30 @@
+/* ==========================================================
+   LegacyTrades Academy — Global Stylesheet
+   Nubia Leo
+   IT 3203 Web Development — Prof. Tucker
+   12/08/2025
+
+   Purpose:
+   This stylesheet defines the visual branding of the site using
+   a gold + purple theme, responsiveness, layout spacing, and UI styling.
+   Styles apply across all pages including navigation, hero sections,
+   cards, buttons, tables, quiz form, and footer.
+
+   Notes:
+   • Built using custom CSS variables for theme consistency
+   • Mobile-first responsive layout adjustments included
+   • Implements grid, flex, table styling & button UI components
+
+   Future Improvements:
+   • Add subtle animations/hover transitions
+   • Improve card spacing on small screens
+   • Add dark/light theme toggle option
+   • Additional chart and image formatting
+
+   This file is externally linked in each HTML page as required.
+========================================================== */
 /* =========================================================
-   Leo Legacy Trading - Styles (Upgraded)
+   Leo Legacy Trading - Styles 
    Author: Nubia Leo
    Description: Royal purple + gold responsive theme
 ========================================================= */
