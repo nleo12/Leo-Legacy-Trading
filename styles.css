@@ -504,10 +504,25 @@ main a:not(.btn):not(.nav-links a):hover::after {
 
 @media (max-width: 480px) {
   body {
-    font-size: .98rem;
+    font-size: 1rem;
+  }
+
+  h1 {
+    font-size: 1.8rem;
+  }
+
+  h2 {
+    font-size: 1.3rem;
+  }
+
+  .hero-text p,
+  p,
+  li {
+    font-size: 0.98rem;
   }
 
   .container {
     width: 94%;
+    padding: 1rem 0;
   }
 }
