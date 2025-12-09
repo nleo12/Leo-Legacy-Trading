@@ -526,3 +526,52 @@ main a:not(.btn):not(.nav-links a):hover::after {
     padding: 1rem 0;
   }
 }
+/* 📱 Mobile fixes */
+@media(max-width: 700px){
+  nav ul{
+    flex-wrap:wrap;
+    gap:.4rem;
+  }
+
+  .hero{
+    padding-top:2rem;
+    text-align:center;
+  }
+
+  .hero-grid{
+    display:block;
+  }
+
+  .hero img{
+    margin:auto;
+    width:90%;
+  }
+
+  h1{
+    font-size:2rem;
+    line-height:1.2;
+  }
+
+  .btn{
+    width:100%;
+    text-align:center;
+  }
+}
+
+/* 📱📲 Tablet layout */
+@media(min-width:701px) and (max-width:1100px){
+  .hero-grid{
+    grid-template-columns:1fr 1fr;
+    gap:1.5rem;
+  }
+  nav ul li a{
+    padding:7px 14px;
+  }
+}
+
+/* 🖥 Desktop spacing polish */
+@media(min-width:1101px){
+  .hero{
+    padding:4rem 1rem 3rem;
+  }
+}
